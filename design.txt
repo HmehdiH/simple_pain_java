@@ -1,0 +1,16 @@
+DESIGN:
+
+programmet använder sig av fyra klasser som är relvanta till varandra sådant att :
+ControllerFrame är klassen som ärver JFrame, har kontroll över programmet och ändrar tillstånden hos klassen Model och figure,
+vilka i sin tur ändrar Graphics hos klassen ViewPanel. 
+
+händelse hanteringen delas i: MouseEvent eller Buttin MouseEvent
+MouseListener och MouseMotionListener som ska ta hand om mouse händelser har implementerats i ControllerFrame konstruktor som direkt interface. 
+
+buttonBox listener implementerades i ControllerFrame som en private class, denna klass implementerar ActionListener för knapparnas händelse. 
+
+ViewPanelen får sina tillstånd och data via Figure och Model. ändring av Modelen görs när en händelse sker i Contorller d.v.s. i JFrame 
+ 
+klassen Figur är en kopia av modellen vilket i sin tur sparas i en ArrayList då det hjälper vid händelse av knappen undo. 
+
+knapparna save och load utför sitt arbete i ControllerFrame och sparar sista modelen och vid load öppnar en model fil som matar ViewPanelen. 
